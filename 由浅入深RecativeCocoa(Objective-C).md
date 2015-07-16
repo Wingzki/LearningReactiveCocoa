@@ -29,7 +29,7 @@ RACStream的原文描述:
  An abstract class representing any stream of values
  ```
  
-RACStream是一组被流化的值得抽象，类名也确实可以说明这一点（与RACSignal比起来要传神的多）。它是整个ReactiveCocoa的基石，后面要说到的RACSignal和RACSequence就是继承自RACStream。我觉得简单一些的理解就是它是一个值得队列，排在前面的值先出，排在后面的值后出，它的主要作用就是给值提供一个传递的“通道”。
+RACStream是一组被流化的值得抽象，类名也确实可以说明这一点（与RACSignal比起来要传神的多）。Stream表示是随着时间改变的值，貌似中文是“流”，它是整个ReactiveCocoa的基石，后面要说到的RACSignal和RACSequence就是继承自RACStream。我觉得简单一些的理解就是，Stream是一个值的队列的一个切面，排在前面的值先出，排在后面的值后出，但所有要出去的值都要经过这个切面，之后我们所有要做的事情也是针对这个切面进行。
 
 ###RACSignal `Push Driven`
 
