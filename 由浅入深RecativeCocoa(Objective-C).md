@@ -1,4 +1,4 @@
-#由浅入深 RecativeCocoa(Objective-C)
+#深入了解 RecativeCocoa(Objective-C)
 作者：Wingzki Github:<https://github.com/Wingzki>
 
 ##什么是RecativeCocoa
@@ -21,10 +21,25 @@ Github地址:<https://github.com/ReactiveCocoa/ReactiveCocoa>
 
 ##基本类说明
 
-* RACStream
-* RACSignal `push`
-* RACSequence `pull`
-* RACSubscriber
+###RACStream
+
+RACStream的原文描述:
+
+ ```
+ An abstract class representing any stream of values
+ ```
+ 
+RACStream是一组被流化的值得抽象，类名也确实可以说明这一点（与RACSignal比起来要传神的多）。它是整个ReactiveCocoa的基石，后面要说到的RACSignal和RACSequence就是继承自RACStream。我觉得简单一些的理解就是它是一个值得队列，排在前面的值先出，排在后面的值后出，它的主要作用就是给值提供一个传递的“通道”。
+
+###RACSignal `Push Driven`
+
+RACSignal继承自RACStream，所以它也是一个值得队列。但是它是`Push Driven`的，就是说siganl每收到一个值就推一个值出去。
+
+###RACSequence `Pull Driven`
+
+RACSignal同样继承自RACStream，与RACSignal不同的是，RACSequence是`Pull Driven`的，就是说它的订阅者每需要一个值，它才“吐”一个值出去。
+
+###RACSubscriber
 
 ##进阶类说明
 
@@ -45,6 +60,7 @@ Github地址:<https://github.com/ReactiveCocoa/ReactiveCocoa>
 
 * flatten
 
+##各个方法的使用场景
 ##使用中的坑及解决途径
 
 
