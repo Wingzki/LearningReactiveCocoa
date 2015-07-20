@@ -11,7 +11,7 @@ Github地址:<https://github.com/ReactiveCocoa/ReactiveCocoa>
 
 * 函数式编程可以有效提高代码的可复用性以及功能的组织性
 * 响应式编程可以让你从由复杂的数据变动导致的混乱的页面刷新回调中解脱出来
-* 统一了Cocoa下的各种通信与回调手段`KVO` `Notification` `Action` `Delegate`
+* 统一了Cocoa下的各种通信与回调手段，如：`KVO` `Notification` `Target-Action` `Delegate`
 
 ##基本感念
 
