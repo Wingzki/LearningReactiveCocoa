@@ -19,7 +19,7 @@ Github地址:<https://github.com/ReactiveCocoa/ReactiveCocoa>
 * Signal `Event传递的管道`
 * Subscriber `Event的接收者`
 
-##基本类说明
+##基本说明
 
 ###RACStream
 
@@ -41,14 +41,36 @@ RACStream的原文描述:
 
 ###RACSubscriber
 
-##进阶类说明
+* RACPassthroughSubscriber
+
+###RACDisposable
+
+##进阶说明
+
+* RACDynamicSignal
+
+如果看`RACSignal`的实现代码，你会发现当你订阅一个`RACSignal`的时候其实什么都没有发生。真的，确实是什么都没有发生。代码如下：
+
+```
+- (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber {
+	NSCAssert(NO, @"This method must be overridden by subclasses");
+	return nil;
+}
+```
+
+事实上，在一个信号被最初产生的时候，真正被实例化的是`RACSignal`的子类`RACDynamicSignal `。
+
+`RACDynamicSignal`持有一个名为didSubscribe的Block。并且覆盖了`RACSignal`的`subscribe`方法，重新定义了订阅这个操作。
 
 * RACSubject
+ * RACReplaySubject
+
+* RACChannel
+
 * RACCommand
-* RACDisposable
 * RACScheduler
 * RACTuple
-* RACChannel
+
 
 ##基本操作
 
