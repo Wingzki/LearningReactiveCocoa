@@ -170,8 +170,9 @@ They're most helpful in bridging the non-RAC world to RAC.
 
 `RACReplaySubject`是`RACSubject`的子类，与`RACSubject`的不同之处是它维护了一个名为valuesReceived可变数组，用于储存所有收到的Value。当有一个新的Subscriber时，valuesReceived中的所有Value都会发送给新的Subscriber。
  
-* RACGroupedSignal
 * RACBehaviorSubject
+
+`RACBehaviorSubject`和`RACReplaySubject`唯一的区别就是它只会把收到的最后一个Value发送给新的Subscriber。
 
 ###RACPassthroughSubscriber
 
