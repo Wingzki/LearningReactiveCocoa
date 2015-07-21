@@ -41,7 +41,6 @@ RACStream的原文描述:
 
 ###RACSubscriber
 
-* RACPassthroughSubscriber
 
 ###RACDisposable
 
@@ -62,8 +61,20 @@ RACStream的原文描述:
 
 `RACDynamicSignal`持有一个名为didSubscribe的Block。并且覆盖了`RACSignal`的`subscribe`方法，重新定义了订阅这个操作。
 
+* RACPassthroughSubscriber
+
+查看objc.io的这篇文章[DTrace](http://objccn.io/issue-19-4/)
+
 * RACSubject
+
+
+
  * RACReplaySubject
+
+ 维护了一个valuesReceived可变数组，用于储存所有收到的Value。
+ 
+ * RACGroupedSignal
+ * RACBehaviorSubject
 
 * RACChannel
 
@@ -80,6 +91,7 @@ RACStream的原文描述:
 
 ##进阶操作
 
+* flattenMap
 * flatten
 
 ##各个方法的使用场景
