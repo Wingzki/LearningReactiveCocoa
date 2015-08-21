@@ -9,9 +9,11 @@ Github地址:<https://github.com/ReactiveCocoa/ReactiveCocoa>
 
 ##为什么要使用RecativeCocoa
 
-* 函数式编程可以有效提高代码的可复用性以及功能的组织性
+* RecativeCocoa可以有效提高代码的可复用性以及稳定性（前提是正确使用，使用不当很容易把自己坑了）
 * 响应式编程可以让你从由复杂的数据变动导致的混乱的页面刷新回调中解脱出来
-* 统一了Cocoa下的各种通信与回调手段，如：`KVO` `Notification` `Target-Action` `Delegate`
+* RecativeCocoa统一了Cocoa下的各种通信与回调手段，如：`KVO` `Notification` `Target-Action` `Delegate`
+
+当你有能力`正确使用``RecativeCocoa`后，你会发世界变得美好了，代码变得整洁了，码代码的效率提高了，总的来说离加薪不远了。但是`不正确的使用`会给自己、队友以及公司带来不必要的麻烦，所以请一定认真学习并`正确使用`,`正确使用`,`正确使用`(重要的事说三遍)RecativeCocoa。
 
 ##基本概念
 
@@ -42,11 +44,15 @@ An abstract class representing any stream of values
 
 ###RACSubscriber
 
+`RACSubscriber`是一个`Protocal`，在RAC中有很多类实现了这个协议。所有实现这个协议的类便具有了订阅并处理`Siganl`的能力。使用不用的方法可以处理`Siganl`不同的Event：`next``complete``error`。可以这样理解，当一个`Siganl`没有订阅者的时候，这个`Siganl`就并没有什么哔用。
 
 ###RACDisposable
 
+`Siganl`被订阅后会返回一个RACDisposable的实例，这个实例可以用于终止信号并做一些额外的清理工作。
+
 ###RACCommand
 
+`RACCommand`可以被理解为RAC世界中的`IBAction`，用于表示一个交互命令。我们可以用它来封装一个点击事件的处理逻辑。
 
 ##进阶说明
 
